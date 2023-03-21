@@ -1,5 +1,4 @@
 Function.prototype.myCall = function (thisContext, ...args) {
-  // Write your code here.
   const symbol = Symbol();
   thisContext[symbol] = this;
 
@@ -10,11 +9,9 @@ Function.prototype.myCall = function (thisContext, ...args) {
 };
 
 Function.prototype.myApply = function (thisContext, args = []) {
-  // Write your code here.
   return this.myCall(thisContext, ...args);
 };
 
 Function.prototype.myBind = function (thisContext, ...args) {
-  // Write your code here.
   return (...newArgs) => this.myApply(thisContext, [...args, ...newArgs])
 };
